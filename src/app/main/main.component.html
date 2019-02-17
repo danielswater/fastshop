@@ -1,0 +1,46 @@
+<!-- FILTER COMPONENT-->
+<div class="container">
+    <filters (sendDataToGenreId)="sendDataToGenreId($event)">></filters>
+</div>
+<!-- / FILTER COMPONENT-->
+<div class="container">
+    <div class="row row-margin-bottom row-margin" id="header">
+        <div class="col-md-5 no-padding lib-item" [ngClass]="{'offset-md-1' : i%2 != 0}" data-category="view" *ngFor="let movie of popularMovies.results; let i = index">
+            <div class="lib-panel">
+                <div class="row box-shadow">
+                    <div class="col-md-5">
+                        <a routerLink="/details/{{movie.id}}"><img class="lib-img-show" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}" alt="{{movie.title}}" title="{{movie.title}}"></a>
+                    </div>
+                    <div class="col-md-6">
+                        <circle-progress style="float: left; margin-right: 8px; margin-left: 8px;" [percent]="voteAverage[i]" [radius]="23" [outerStrokeWidth]="5" [innerStrokeWidth]="5" [outerStrokeColor]="outerStrokeColor[i]" [innerStrokeColor]="innerStrokeColor[i]" [animation]="true"
+                            [animationDuration]="300"></circle-progress>
+                        <div class="lib-row lib-header">
+                            <a routerLink="/details/{{movie.id}}" title="{{movie.title}}">{{movie.title}}</a>
+                        </div>
+                        <div class="lib-row lib-date">
+                            {{movie.release_date | date: 'longDate'}}
+                        </div>
+                        <div class="lib-row lib-desc">
+                            <p>{{(movie.overview.length>140)? (movie.overview | slice:0:140)+'....':(movie.overview)}}</p>
+                            <div class="bottom-align-text wrap" id="header-content">
+                                <div class="d-flex justify-content-start more-information">
+                                    <a routerLink="/details/{{movie.id}}">Mais informações</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PAGINATION-->
+<div class="d-flex justify-content-center">
+    <pagination [maxSize]="5" [totalItems]="total_results" previousText="Anterior" nextText="Próximo" [(ngModel)]="currentPage " (pageChanged)="pageChanged($event) "></pagination>
+</div>
+
+<!-- <div class="d-flex align-items-start">align-items-start</div>
+<div class="d-flex align-items-end">align-items-end</div>
+<div class="d-flex align-items-center">align-items-center</div>
+<div class="d-flex align-items-baseline">align-items-baseline</div>
+<div class="d-flex align-items-stretch">align-items-stretch</div> -->

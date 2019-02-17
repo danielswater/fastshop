@@ -1,0 +1,66 @@
+nav {
+  border-bottom: 1px solid #e4e3e3;
+}
+
+i {
+  color: #e4e3e3;
+}
+
+.form-control {
+  border: none;
+  padding-left: 0px;
+}
+
+::placeholder {
+  color: #e4e3e3;
+  opacity: 1;
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  color: #e4e3e3;
+  font-style: italic;
+}
+
+::-ms-input-placeholder {
+  color: #e4e3e3;
+  font-style: italic;
+}
+
+.container-fluid {
+  border-bottom: 1px solid #e4e3e3;
+}
+
+.inner-addon {
+  position: relative;
+}
+
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.left-addon .fa {
+  left: 0px;
+  padding: 10px 0px 0px;
+}
+
+.right-addon .fa {
+  right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+  padding-left: 30px;
+}
+
+.right-addon input {
+  padding-right: 30px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}

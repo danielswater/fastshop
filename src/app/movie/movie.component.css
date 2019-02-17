@@ -1,0 +1,27 @@
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.custom-bg {
+    height: auto;
+    background-size: cover;
+    width: auto;
+    background-position: 80% 80%;
+    background-size: cover;
+}
+
+.layer {
+    background-color: rgba(43, 17, 8, 0.96);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .col-md-5 {
+        flex: 0 0 27.666667%;
+        max-width: 27.666667%;
+    }
+}

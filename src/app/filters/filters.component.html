@@ -1,0 +1,21 @@
+<h2>Descobrir novos filmes e séries:</h2>
+<div class="row">
+    <div class="col-md-12 filters">
+        <form>
+            <div class="form-row">
+                <!-- BUTTON FILTER BY GENRES-->
+                <div class="form-group col-md-2 col-sm-2 col-xl-2">
+                    <label>Gêneros</label>
+                    <div class="btn-group" dropdown>
+                        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+                  Selecione <span class="caret"></span>
+                </button>
+                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                            <li *ngFor="let genre of genres.genres" role="menuitem"><a click-stop-propagation (click)="filterClickByGenres(genre.id)" class="dropdown-item">{{genre.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

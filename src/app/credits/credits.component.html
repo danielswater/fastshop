@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+        <div class="navbar-collapse collapse" id="navbar10">
+            <ul class="navbar-nav nav-fill w-100">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Discussões
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="//codeply.com">Resenhas</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Vídeos
+                  </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Imagens
+                  </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Alterações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reportar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Compartilhar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Editar</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid gradient">
+    <div class="container wraper">
+        <section class="details-card">
+            <div class="row">
+                <h3>Elenco principal</h3>
+                <div class="row" id="cards">
+                    <div class="col-md-4" *ngFor="let cast of casts">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img src="https://image.tmdb.org/t/p/w138_and_h175_face/{{cast.profile_path}}" title="{{cast.name}}" alt="{{cast.name}}">
+                            </div>
+                            <div class="card-desc">
+                                <h4>{{cast.name}}</h4>
+                                <p>{{cast.character}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 full-cast">
+                        <h3>Elenco e equipe técnica completos</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="gray-column">
+            <div class="row">
+                <div class="col-md-12 social_links">
+                    <div>
+                        <a tooltip="Visitar Facebook" class="social_link" href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                    </div>
+                    <div>
+                        <a tooltip="Visitar Twitter" class="social_link" href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                    </div>
+                    <div>
+                        <a tooltip="Visitar Instagram" class="social_link" href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                    </div>
+                    <div>
+                        <a tooltip="Visitar página inicial" class="social_link" href="{{credits.homepage}}" target="_blank"><i class="fa fa-link fa-2x" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-12 info-container">
+                    <h3>Informações</h3>
+                    <hr>
+                    <h4>Situação</h4>
+                    <p>{{credits.status}}</p>
+                    <h3>Informações de lançamento</h3>
+                    <p><span class="flag-icon flag-icon-{{credits.country}}"></span> {{credits.release_date | date: 'longDate'}}</p>
+                    <h3>Idioma original</h3>
+                    <p>{{language}}</p>
+                    <h3>Gêneros</h3>
+                    <button *ngFor="let item of credits.genres" type="button" class="btn btn-light btn-sm">{{item.name}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
